@@ -1,35 +1,29 @@
+import 'package:bidwise/Components/drawer_menu.dart';
+import 'package:bidwise/Components/nav/nav_menu.dart';
 import 'package:flutter/material.dart';
 
-
-//create a home page that has a sign up button and an auto login that happens on iphon when you open the app
 class HomePage extends StatefulWidget {
-  const HomePage({super.key, required this.title});
+  const HomePage({super.key});
 
-
-  final String title;
+  final String title = "BidWise";
 
   @override
   State<HomePage> createState() => _HomePageState();
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text('Welcome to BidWise'),
-      ),
-    );
-  }
 }
 
 class _HomePageState extends State<HomePage> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+      key: _scaffoldKey,
+      appBar: NavMenu(
+        title: widget.title,
+        scaffoldKey: _scaffoldKey,
+        openDrawer: () => _scaffoldKey.currentState?.openDrawer(),
       ),
+      drawer: DrawerMenu(), // Use the DrawerMenu widget
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -40,11 +34,10 @@ class _HomePageState extends State<HomePage> {
                 fontWeight: FontWeight.bold,
               ),
               'Welcome to BidWise',
-            )
+            ),
           ],
         ),
-      )
+      ),
     );
   }
 }
-

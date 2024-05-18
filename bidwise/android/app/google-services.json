@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "740975783088",
+    "project_id": "bidwise-34699",
+    "storage_bucket": "bidwise-34699.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:740975783088:android:bde29f1f1ede9d46b1df75",
+        "android_client_info": {
+          "package_name": "com.example.bidwise"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA6Mop1yPtXyUGLmSmlmySsKMBfmEppp3Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
